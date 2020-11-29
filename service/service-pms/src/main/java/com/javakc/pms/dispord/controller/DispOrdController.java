@@ -122,6 +122,18 @@ public class DispOrdController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
+
+    @ApiOperation(value = "导出Excel", notes = "使用Apache的POI进行数据的导出")
+    @GetMapping("exportExcel")
+    public void exportExcel(HttpServletResponse response) {
+        dispOrdService.exportExcel(response);
+    }
+
+    @ApiOperation(value = "导入Excel", notes = "使用Apache的POI进行数据的导入")
+    @PostMapping("importExcel")
+    public void importExcel(MultipartFile file) {
+        dispOrdService.importExcel(file);
+    }
+
 }
