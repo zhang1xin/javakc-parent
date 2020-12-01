@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @author: zhang yi xin
  * @create: 2020/12/1 13:08
  */
-@FeignClient(name = "service-mes")
+@FeignClient(name = "service-mes", fallback = MesFeignClient.class)
 @Component
 public interface MesClient {
 
     /**
      * 指定要调用的接口，保证与服务中的接口的一致性
+     *
      * @param dispOrdRls
      * @return
      */

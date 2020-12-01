@@ -27,16 +27,16 @@
             <artifactId>service-base</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--负载均衡机制
+        <!--负载均衡机制-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-        </dependency>-->
-        <!--hystrix依赖
+        </dependency>
+        <!--hystrix依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>-->
+        </dependency>
         <!--服务注册-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

@@ -5,6 +5,7 @@ import com.javakc.pms.dispord.client.MesClient;
 import com.javakc.pms.dispord.entity.DispOrdRls;
 import com.javakc.pms.dispord.service.DispOrdRlsService;
 import com.javakc.pms.dispord.vo.DispOrdRlsQuery;
+import com.javakc.servicebase.handler.HctfException;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -54,7 +55,10 @@ public class DispOrdRlsController {
         dispOrdRls.setReleaseTime(new Date());
 
         // 调用 mes 服务，来进行数据的下达
-        mesClient.savePmsDispOrdRls(dispOrdRls);
+        APICODE apicode = mesClient.savePmsDispOrdRls(dispOrdRls);
+        if (apicode.getCode() == 20001) {
+            throw new HctfException(20001, apicode.getMessage());
+        }
 
         // 修改
         dispOrdRlsService.saveOrUpdate(dispOrdRls);

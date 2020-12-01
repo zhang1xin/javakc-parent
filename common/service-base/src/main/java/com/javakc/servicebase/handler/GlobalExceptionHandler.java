@@ -21,6 +21,8 @@ public class GlobalExceptionHandler {
         return APICODE.ERROR().message("Exception:服务器异常");
     }
 
+    @ExceptionHandler(HctfException.class)
+    @ResponseBody
     public APICODE errorHandler(HctfException e) {
         e.printStackTrace();
         return APICODE.ERROR().message(e.getMsg()).code(e.getCode());
