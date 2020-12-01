@@ -30,7 +30,7 @@ import java.util.List;
 @Api(tags = "调度指令库控制器")
 @RestController
 @RequestMapping("/pms/dispord")
-@CrossOrigin
+//@CrossOrigin
 public class DispOrdController {
     @Autowired
     private DispOrdService dispOrdService;

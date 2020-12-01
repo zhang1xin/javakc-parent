@@ -22,7 +22,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/pms/dispordrls")
-@CrossOrigin
+//@CrossOrigin
 public class DispOrdRlsController {
     @Autowired
     private DispOrdRlsService dispOrdRlsService;
